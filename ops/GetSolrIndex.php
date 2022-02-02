@@ -33,7 +33,7 @@ class GetSolrIndex implements CloudApiOpsInterface {
    * Gets solr core indexes from Acquia Cloud
    */
   public function sendRequest($options = [], $print_output = TRUE) {
-    if (!isset($options['indexId']) || !empty($options['indexId'])) {
+    if (!isset($options['indexId']) || empty($options['indexId'])) {
       $message = 'Index ID is mandatory';
       if ($print_output) {
         print_r($message);
