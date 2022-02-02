@@ -10,3 +10,11 @@ This is a basic PHP app that interacts with Acquia Cloud API
 ```
 php run.php
 ```
+
+##What operations can be performed?
+For now, following can be performed using this app:
+- Solr 7 Indexes
+    - Get all indexes
+    - Get a specific index
+    - Create new indexes (multiple indexes at once)
+    - Delete existing index

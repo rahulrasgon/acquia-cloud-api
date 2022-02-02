@@ -32,7 +32,7 @@ class CreateSolrIndexes implements CloudApiOpsInterface {
   /**
    * Gets solr core indexes from Acquia Cloud
    */
-  public function sendRequest($print_output = TRUE) {
+  public function sendRequest($options = [], $print_output = TRUE) {
     $output = [];
     $database_roles = $this->vars->database_roles;
     $headers = [

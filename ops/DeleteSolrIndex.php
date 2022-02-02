@@ -2,7 +2,7 @@
 
 require './vendor/autoload.php';
 
-class GetSolrIndexes implements CloudApiOpsInterface {
+class DeleteSolrIndex implements CloudApiOpsInterface {
 
   /**
    * @var IdentityProvider
@@ -33,10 +33,21 @@ class GetSolrIndexes implements CloudApiOpsInterface {
    * Gets solr core indexes from Acquia Cloud
    */
   public function sendRequest($options = [], $print_output = TRUE) {
+    if (!isset($options['indexId']) || empty($options['indexId'])) {
+      $message = 'Index ID is mandatory';
+      if ($print_output) {
+        print_r($message);
+        return FALSE;
+      }
+      else {
+        return $message;
+      }
+    }
+
     $output = [];
     $request = $this->idp->getProvider()->getAuthenticatedRequest(
-      'GET',
-      $this->vars->getUri() . '/environments/' . $this->vars->getEnvId() . '/search/indexes',
+      'DELETE',
+      $this->vars->getUri() . '/environments/' . $this->vars->getEnvId() . '/search/indexes/' . $options['indexId'],
       $this->idp->getAuthToken()
     );
 
