@@ -32,14 +32,22 @@ class GetSolrIndexes implements CloudApiOpsInterface {
   /**
    * Gets solr core indexes from Acquia Cloud
    */
-  public function sendRequest() {
+  public function sendRequest($print_output = TRUE) {
+    $output = [];
     $request = $this->idp->getProvider()->getAuthenticatedRequest(
       'GET',
       $this->vars->getUri() . '/environments/' . $this->vars->getEnvId() . '/search/indexes',
       $this->idp->getAuthToken()
     );
 
-    // Send the request.
-    return $this->sendRequest->send($request);
+    if ($print_output) {
+      echo 'RESPONSE : ';
+      print_r($this->sendRequest->send($request));
+    }
+    else {
+      $output[] = $this->sendRequest->send($request);
+    }
+
+    return $output;
   }
 }

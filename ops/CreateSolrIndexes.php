@@ -57,6 +57,7 @@ class CreateSolrIndexes implements CloudApiOpsInterface {
       );
 
       if ($print_output) {
+        echo 'RESPONSE : ';
         print_r($this->sendRequest->send($request));
       }
       else {
