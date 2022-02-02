@@ -1,0 +1,9 @@
+{
+    "name": "gauravjeet/acquia-cloud-api",
+    "type": "project",
+    "description": "A minimal PHP app that connects with Acquia Cloud",
+    "license": "GPL-2.0-only",
+    "require": {
+        "league/oauth2-client": "^2.6"
+    }
+}
