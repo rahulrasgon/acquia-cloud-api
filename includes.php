@@ -10,3 +10,4 @@ require './ops/GetSolrIndex.php';
 require './ops/DeleteSolrIndexes.php';
 require './ops/DeleteSolrIndex.php';
 require './ops/CreateSolrIndexes.php';
+require './ops/UpdateSolrIndexes.php';

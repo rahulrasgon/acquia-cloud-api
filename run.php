@@ -10,7 +10,7 @@ $solrIndexes->sendRequest();
 
 // Gets a specific solr index
 //$solrIndex = new GetSolrIndex($idp);
-//$solrIndex->sendRequest(['indexId' => 'ABMQ-57524.dev.novartis_ca']);
+//$solrIndex->sendRequest(['indexId' => '']);
 
 // Creates multiple new solr indexes at once
 //$solrIndexes = new CreateSolrIndexes($idp);
@@ -22,4 +22,8 @@ $solrIndexes->sendRequest();
 
 // Deletes a specific solr index
 //$solrIndex = new DeleteSolrIndex($idp);
-//$solrIndex->sendRequest(['indexId' => 'ABMQ-57524.dev.novartis_co_jp']);
+//$solrIndex->sendRequest(['indexId' => '']);
+
+// Updates multiple new solr indexes at once
+// $solrIndexes = new UpdateSolrIndexes($idp);
+// $solrIndexes->sendRequest();
